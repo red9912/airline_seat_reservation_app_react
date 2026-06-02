@@ -1,0 +1,33 @@
+GET http://localhost:3001/api/aerei HTTP/1.1
+###
+GET http://localhost:3001/api/aerei/2
+###
+GET http://localhost:3001/api/prenotazioni
+###
+DELETE http://localhost:3001/api/prenotazioni/1
+###
+POST http://localhost:3001/api/prenotazioni
+Content-Type: application/json
+
+{
+    "idAereo": 1,
+    "numeroPosti":5
+}
+###
+## Execute Log In
+POST http://localhost:3001/api/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "username": "enrico@test.com",
+    "password": "pwd"
+}
+###
+
+## Checking if user is still logged-in.
+GET http://localhost:3001/api/sessions/current HTTP/1.1
+###
+
+## Execute Log Out.
+DELETE http://localhost:3001/api/sessions/current HTTP/1.1
+###
